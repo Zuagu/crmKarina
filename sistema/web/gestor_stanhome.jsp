@@ -1,7 +1,7 @@
 <%-- 
     Document   : gestor_teleono
     Created on : 2/11/2020, 09:06:46 AM
-    Author     : zuagu
+    Author     : zuagu, lowenz
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -728,6 +728,6 @@
 
         <script type="text/javascript" src="js/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/js/gestor_axtel.js"></script>
+        <script type="text/javascript" src="js/js/gestor_stanhome.js"></script>
     </body>
 </html>
