@@ -50,7 +50,7 @@ $(document).ready(function () {
 });
 
 window.onload = function () {
-//    select_cuenta_siguiente(id_usuario);
+    select_datos_cuenta( $("#DEALER").val() );
     options_estatus_llamadas = `<option value="0" selected>Selecciona Codigo</option>
         <option value="1">SIN CLASIFICAR</option>
         <option value="2">SIN DATOS</option>
@@ -424,7 +424,7 @@ function select_datos_cuenta(_cuenta) {
             $("#codigo_llamada").append(options_estatus_llamadas);
             $('select').formSelect();
 
-            $("#numero_marcado_deudor, #gestion").val("");
+
             $("#tiempo_actual").val("00:00:00");
             $("#retraso_actual").val("00:00:00");
 

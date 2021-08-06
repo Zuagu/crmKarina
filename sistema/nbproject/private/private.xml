@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/gestor_stanhome.jsp</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/js/js/predictivo_azteca.js</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/META-INF/context.xml</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/src/java/callcenter/controller/ControllerUploadFiles.java</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/gestor_incomark.jsp</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/js/js/Script_Azteca.js</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/gestor_axtel.jsp</file>
-            <file>file:/Users/mac/Documents/CRMKARINA/sistema/web/predictivo_azteca.jsp</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/gestor_incomark.jsp</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/src/java/callcenter/controller/ControllerDataCuentaAzteca.java</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/js/js/Script_Azteca.js</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/reportes-axtel.jsp</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/css/css/style_multi.css</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/src/java/callcenter/model/ModelDataCuentaAzteca.java</file>
+            <file>file:/C:/Users/RH/Documents/karina/crmKarina/sistema/web/header.jsp</file>
         </group>
     </open-files>
 </project-private>

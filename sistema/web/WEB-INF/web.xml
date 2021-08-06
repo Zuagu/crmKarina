@@ -408,6 +408,10 @@
         <servlet-name>ControllerProcesarCartera</servlet-name>
         <servlet-class>callcenter.controller.ControllerProcesarCartera</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControllerDataCuentaStarhome</servlet-name>
+        <servlet-class>callcenter.controller.ControllerDataCuentaStarhome</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManageCategorias</servlet-name>
         <url-pattern>/ManageCategorias</url-pattern>
@@ -803,6 +807,10 @@
     <servlet-mapping>
         <servlet-name>ControllerProcesarCartera</servlet-name>
         <url-pattern>/ControllerProcesarCartera</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerDataCuentaStarhome</servlet-name>
+        <url-pattern>/ControllerDataCuentaStarhome</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

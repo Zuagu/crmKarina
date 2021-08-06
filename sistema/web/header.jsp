@@ -22,7 +22,7 @@
 <ul id="dropdown_app" class="dropdown-content">
     <li><a href="https://incomarkpbx.systelvoice.com/index.php"  class="center-align" target="_blank"><img class="width_ext size_ul" src="image/issabel.png"></a></li>
 </ul>
-<nav class="header_nav  blue darken-4">
+<nav class="header_nav grey lighten-4">
     <div class="nav-wrapper icon_nav">
         <ul>
             <li href="#!" class=""><img src="image/logoInco.fw.png" alt="image/logoInco.fw.png" class="img_log"></li> 
@@ -31,7 +31,7 @@
         <div class="contenedor_buscar white">
             <input id="buscador_cuentas_gestor" class="search_cuentas center-align" type="text" placeholder="Buscar">
         </div>
-        <a id="buscar_cuentas" class="btn-flat col s12"><i class="material-icons tiny right white-text">search</i></a>
+        <a id="buscar_cuentas" class="btn-flat col s12"><i class="material-icons tiny right black-text">search</i></a>
 
         <ul class="right size_ul ul_margin_top">
             <li><a class="size_ul dropdown-trigger" href="#!" data-target="dropdown1"><img id="foto_perfil" class="circle size_ul margin_17_top" src="image/icon-user.png"></a></li>

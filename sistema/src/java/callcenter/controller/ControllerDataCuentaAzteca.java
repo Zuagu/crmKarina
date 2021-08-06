@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -195,6 +196,11 @@ public class ControllerDataCuentaAzteca extends HttpServlet {
             writer.flush();
             writer.close();
         } else if (action.equals("actualizar_informacion_contacto")) {
+            
+            HttpSession sesion = request.getSession();
+            
+            String id_user = (String) sesion.getAttribute("id_usuario");
+            
             String Respuesta = ModelDataCuentaAzteca.actualizar_informacion_contacto(
                     request.getParameter("nom_tel1"),
                     request.getParameter("tel1_1"),
@@ -211,7 +217,8 @@ public class ControllerDataCuentaAzteca extends HttpServlet {
                     request.getParameter("nom_tel5"),
                     request.getParameter("tel5_1"),
                     request.getParameter("tel5_2"),
-                    request.getParameter("cuenta")
+                    request.getParameter("cuenta"),
+                    id_user
             );
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter writer = response.getWriter();

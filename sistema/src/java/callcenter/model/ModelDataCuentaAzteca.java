@@ -5,9 +5,7 @@
  */
 package callcenter.model;
 
-import arcade.data.StartConn;
-import java.io.FileWriter;
-import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -685,7 +683,8 @@ public class ModelDataCuentaAzteca {
             String nom_tel5,
             String tel5_1,
             String tel5_2,
-            String cuenta) {
+            String cuenta,
+            String id_user) {
         try {
             StartConexion ic = new StartConexion();
             /*
@@ -693,24 +692,25 @@ public class ModelDataCuentaAzteca {
             nom_tel3            tel3_1            tel3_2            nom_tel4            tel4_1            tel4_2
             nom_tel5            tel5_1            tel5_2            nom_tel_aval        tel_aval_1        tel_aval_2
              */
+            
             String sql = "UPDATE azteca_base_genenral_original SET\n"
-                    + "NOM_TEL1 = '" + nom_tel1 + "',\n"
-                    + "TELEFONO1 = '" + tel1_1 + "',\n"
-                    + "TELEFONO1_2 = '" + tel1_2 + "',\n"
-                    + "NOM_TEL2 = '" + nom_tel2 + "',\n"
-                    + "TELEFONO2 = '" + tel2_1 + "',\n"
-                    + "TELEFONO2_2 = '" + tel2_2 + "',\n"
-                    + "NOM_TEL3 = '" + nom_tel3 + "',\n"
-                    + "TELEFONO3 = '" + tel3_1 + "',\n"
-                    + "TELEFONO3_2 = '" + tel3_2 + "',\n"
-                    + "NOM_TEL4 = '" + nom_tel4 + "',\n"
-                    + "TELEFONO4 = '" + tel4_1 + "',\n"
-                    + "TELEFONO4_2 = '" + tel4_2 + "',\n"
-                    + "NOM_TEL5 = '" + nom_tel5 + "',\n"
-                    + "TELEFONO5 = '" + tel5_1 + "',\n"
+                    + "NOM_TEL1 = '" + nom_tel1 + "',"
+                    + "TELEFONO1 = '" + tel1_1 + "',"
+                    + "TELEFONO1_2 = '" + tel1_2 + "',"
+                    + "NOM_TEL2 = '" + nom_tel2 + "',"
+                    + "TELEFONO2 = '" + tel2_1 + "',"
+                    + "TELEFONO2_2 = '" + tel2_2 + "',"
+                    + "NOM_TEL3 = '" + nom_tel3 + "',"
+                    + "TELEFONO3 = '" + tel3_1 + "',"
+                    + "TELEFONO3_2 = '" + tel3_2 + "',"
+                    + "NOM_TEL4 = '" + nom_tel4 + "',"
+                    + "TELEFONO4 = '" + tel4_1 + "',"
+                    + "TELEFONO4_2 = '" + tel4_2 + "',"
+                    + "NOM_TEL5 = '" + nom_tel5 + "',"
+                    + "TELEFONO5 = '" + tel5_1 + "',"
                     + "TELEFONO5_2 = '" + tel5_2 + "'\n"
                     + "WHERE CLIENTE_UNICO = '" + cuenta + "';";
-            System.out.println(sql);
+            System.out.println("El id usuarios " + id_user + " ha hecho " + sql);
 
             ic.st.executeUpdate(sql);
             ic.st.close();

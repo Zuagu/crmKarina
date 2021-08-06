@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Gestor Stanhome</title>
+        <title>Gestor Axtel</title>
         <link rel="shortcut icon" href="image/logoInco.fw.png">
         <link rel="stylesheet" type="text/css" href="css/css/icons-material.css">
         <link rel="stylesheet" type="text/css" href="css/css/materialize.min.css">
@@ -31,7 +31,7 @@
                 <div class="col s12 m12 l12 contenido-datos">
 
                     <input id="ID_CUENTA" type="hidden">
-                    <input id="numero_marcado_deudor" type="hidden">
+                    <input id="numero_marcado_deudor" type="hidden" value="${telefono}">
 
                     <div class=" col s7 m7 l7">
                         <div id="info_gestor" class=" col s12 m12 l12 div_input_gestor_info  z-depth-1 white">
@@ -44,7 +44,7 @@
                                 <label for="NOMBRE">NOMBRE</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="DEALER" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <input id="DEALER" type="text" class="validate" placeholder="" readonly="readonly" value="${cuenta}">
                                 <label for="DEALER">DEALER</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
@@ -158,7 +158,7 @@
                             </div>
 
                             <div class=" col s7 m7 l7  div_gestor_gestion z-depth-1">
-                                <textarea id="gestion" readonly="" class="materialize-textarea limpiar_texto" data-length="1000" placeholder="Gestion"></textarea>
+                                <textarea id="gestion" class="materialize-textarea limpiar_texto" data-length="2000" placeholder="Gestion">${telefono}</textarea>
                             </div>
 
                             <div class=" col s5 m5 l5 div_gestor_gestion">
@@ -170,12 +170,9 @@
                                 <div class=" input-field col s12 m12 l12">
                                     <select id="codigo_llamada"></select>
                                 </div>
-                                <div class=" input-field  col s6 m6 l6">
+                                <div class=" input-field  col s12 m12 l12">
                                     <a id="guardar_gestion" class="waves-effect waves-light btn green btn_guardar_gestiones"><i class="material-icons right">save</i>Guardar</a>
                                 </div> 
-                                <div class=" input-field col s6 m6 l6">
-                                    <a id="cuenta_siguiente" class="waves-effect waves-light btn red btn_siguiente"><i class="material-icons right">send</i>Sig.</a>
-                                </div>
                             </div>
                         </div>
 
@@ -711,6 +708,6 @@
 
         <script type="text/javascript" src="js/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/js/gestor_stanhome.js"></script>
+        <script type="text/javascript" src="js/js/predictivo_stanhome.js"></script>
     </body>
 </html>
