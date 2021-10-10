@@ -412,6 +412,10 @@
         <servlet-name>ControllerDataCuentaStarhome</servlet-name>
         <servlet-class>callcenter.controller.ControllerDataCuentaStarhome</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControllerDataCuentaCame</servlet-name>
+        <servlet-class>callcenter.controller.ControllerDataCuentaCame</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManageCategorias</servlet-name>
         <url-pattern>/ManageCategorias</url-pattern>
@@ -811,6 +815,10 @@
     <servlet-mapping>
         <servlet-name>ControllerDataCuentaStarhome</servlet-name>
         <url-pattern>/ControllerDataCuentaStarhome</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerDataCuentaCame</servlet-name>
+        <url-pattern>/ControllerDataCuentaCame</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
