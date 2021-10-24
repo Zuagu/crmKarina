@@ -21,6 +21,9 @@
                 color: #000;
                 font-weight: bold;
             }
+            .importante {
+                background-color: #69f0ae !important;
+            }
         </style>
     </head>
 
@@ -106,15 +109,15 @@
                                 <label for="cartera_vencida_total">CARTERA VENCIDA TOTAL</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="monto_credito_x_socio" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <input id="monto_credito_x_socio" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
                                 <label for="monto_credito_x_socio">CREDITO X SOCIO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="monto_credito_came" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <input id="monto_credito_came" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
                                 <label for="monto_credito_came">CREDITO CAME</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="importe_pagare_grupal" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <input id="importe_pagare_grupal" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
                                 <label for="importe_pagare_grupal">PAGARE GRUPAL</label>
                             </div>
                             
@@ -130,8 +133,16 @@
                                 <input id="referencias_BBVA" type="text" class="validate" placeholder="" readonly="readonly" value="">
                                 <label for="referencias_BBVA">REFERENCIA BBVA</label>
                             </div>
+                            
+                            <div class="input-field col s6 m6 l6">
+                                <input id="dias_atraso" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="dias_atraso">DIAS ATRASO</label>
+                            </div>
+                            <div class="input-field col s6 m6 l6">
+                                <input id="cuentas_dobles" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="cuentas_dobles">CUENTAS DOBLES</label>
+                            </div>
                         </div>
-                        
                         
                     </div>
 
@@ -185,9 +196,9 @@
 
                         <!--componente de datos de contactacion directa -->
 
-                        <div id="datos_marcacion_directa" class="col s12 l12 m12 marcacion_directa white z-depth-1">
+                        <div class="col s12 l12 m12 marcacion_directa white z-depth-1">
                             
-                            <table>
+                            <table id="datos_marcacion_directa">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
@@ -207,11 +218,11 @@
 
                                 <div class="input-field col s6 m6 l6">
                                     <input id="telefono" type="text" class="validate" placeholder=""  value="">
-                                    <label for="telefono">telefono 1</label>
+                                    <label for="telefono">TELEFONO</label>
                                 </div>
                                 <div class="input-field col s6 m6 l6">
                                     <input id="telefono_2" type="text" class="validate" placeholder=""  value="">
-                                    <label for="telefono_2">telefono 2</label>
+                                    <label for="telefono_2">TELEFONO 2</label>
                                 </div>
                                 <div class="input-field col s6 m6 l6">
                                     <input id="REFERENCIA_1" type="text" class="validate" placeholder=""  value="">

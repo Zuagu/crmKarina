@@ -80,6 +80,8 @@ public class ModelDataCuentaCame {
                 objCuenta.put("TEL_REF_3", ic.rs.getString("TEL_REF_3"));
                 objCuenta.put("ESTATUS", ic.rs.getString("ESTATUS"));
                 objCuenta.put("ESTATUS_POSIBLES_TXT", ic.rs.getString("ESTATUS_POSIBLES_TXT"));
+                objCuenta.put("CUENTAS_DOBLES", ic.rs.getString("CUENTAS_DOBLES"));
+                objCuenta.put("SALDO_C_DOBLES", ic.rs.getString("SALDO_C_DOBLES"));
             }
             ic.rs.close();
             ic.st.close();
@@ -156,6 +158,8 @@ public class ModelDataCuentaCame {
                 objCuenta.put("TEL_REF_3", ic.rs.getString("TEL_REF_3"));
                 objCuenta.put("ESTATUS", ic.rs.getString("ESTATUS"));
                 objCuenta.put("ESTATUS_POSIBLES_TXT", ic.rs.getString("ESTATUS_POSIBLES_TXT"));
+                objCuenta.put("CUENTAS_DOBLES", ic.rs.getString("CUENTAS_DOBLES"));
+                objCuenta.put("SALDO_C_DOBLES", ic.rs.getString("SALDO_C_DOBLES"));
             }
             ic.rs.close();
             ic.st.close();
@@ -272,6 +276,48 @@ public class ModelDataCuentaCame {
 
             System.out.println(e);
             return "SQL: Error al traer las gestiones de la cuenta stanhome Code Error: " + e;
+        }
+    }
+    
+    
+    
+    public static String actualizar_informacion_contacto(String objGestion) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) parser.parse(objGestion);
+            System.out.println(jsonObject);
+
+            Object _ID_CUENTA = jsonObject.get("ID_CUENTA");
+            Object _TELEFONO = jsonObject.get("TELEFONO_1");
+            Object _TELEFONO_2 = jsonObject.get("TELEFONO_2");
+            Object _REFERENCIA_1 = jsonObject.get("REFERENCIA_1");
+            Object _TEL_REF_1 = jsonObject.get("TEL_REF_1");
+            Object _REFERENCIA_2 = jsonObject.get("REFERENCIA_2");
+            Object _TEL_REF_2 = jsonObject.get("TEL_REF_2");
+            Object _REFERENCIA_3 = jsonObject.get("REFERENCIA_3");
+            Object _TEL_REF_3 = jsonObject.get("TEL_REF_3");
+
+            StartConexion ic = new StartConexion();
+            String sql = "call came_update_datos_contacto('"+_TELEFONO+"','"+_TELEFONO_2+"','"+_REFERENCIA_1+"','"+_TEL_REF_1+"','"+_REFERENCIA_2+"','"+_TEL_REF_2+"','"+_REFERENCIA_3+"' ,'"+_TEL_REF_3+"' ,'"+_ID_CUENTA+"')";
+            System.out.println(sql);
+            ic.rs = ic.st.executeQuery(sql);
+
+            JSONObject objRes = new JSONObject();
+//            System.out.println(objRes);
+            while (ic.rs.next()) {
+                objRes.put("response", ic.rs.getString("response"));
+
+            }
+
+            ic.rs.close();
+            ic.st.close();
+            ic.conn.close();
+            return objRes.toJSONString();
+        } catch (SQLException e) {
+            return "SQL: Error: al insertar datos de gestion Code Error: " + e;
+        } catch (org.json.simple.parser.ParseException ex) {
+            Logger.getLogger(ModelGestor.class.getName()).log(Level.SEVERE, null, ex);
+            return "SQL: Falla en el parser de JSONObject";
         }
     }
     

@@ -82,6 +82,16 @@ public class ControllerDataCuentaCame extends HttpServlet {
             writer.flush();
             writer.close();
         }
+        else if (action.equals("actualizar_informacion_contacto")) {
+            String Respuesta = ModelDataCuentaCame.actualizar_informacion_contacto(
+                    request.getParameter("datos")
+            );
+            response.setContentType("text/html; charset=UTF-8");
+            PrintWriter writer = response.getWriter();
+            writer.print(Respuesta);
+            writer.flush();
+            writer.close();
+        }
     }
 
     /**

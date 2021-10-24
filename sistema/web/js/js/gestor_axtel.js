@@ -367,8 +367,14 @@ function select_cuenta_siguiente(_id_usuario) {
             `);
             select_gestiones_cuenta(datos_cuenta.CUENTA, "0000-00-00", "tbody_tabla_gestiones");
             $("#DIRECCION_AXTEL").val(`${datos_cuenta.COLONIA} ${datos_cuenta.CALLE_NUM} CP: ${datos_cuenta.CP}, ${datos_cuenta.CIUDAD}, ${datos_cuenta.ESTADO}`);
+            
+            try {
+                $("#TOTAL_DESCUENTO").val( parseFloat(datos_cuenta.TOTAL) - ((parseFloat(datos_cuenta.DESCUENTO.replace("%", "")) * parseFloat(datos_cuenta.TOTAL)) / 100));
+            } catch (error) {
+                $("#TOTAL_DESCUENTO").val('NO');
+                console.error('Falla en pintar el TOTAL_DESCUENTO: ',error);
+            }
 
-            $("#TOTAL_DESCUENTO").val((parseFloat(datos_cuenta.DESCUENTO.replace("%", "")) * parseFloat(datos_cuenta.TOTAL)) / 100);
         },
         error: function (error) {
             console.log(error);
@@ -426,7 +432,7 @@ function select_datos_cuenta(_cuenta) {
             $("#DIRECCION_AXTEL").val(`${datos_cuenta.COLONIA} ${datos_cuenta.CALLE_NUM} CP: ${datos_cuenta.CP}, ${datos_cuenta.CIUDAD}, ${datos_cuenta.ESTADO}`);
 
             try {
-                $("#TOTAL_DESCUENTO").val((parseFloat(datos_cuenta.DESCUENTO.replace("%", "")) * parseFloat(datos_cuenta.TOTAL)) / 100);
+                $("#TOTAL_DESCUENTO").val( parseFloat(datos_cuenta.TOTAL) - ((parseFloat(datos_cuenta.DESCUENTO.replace("%", "")) * parseFloat(datos_cuenta.TOTAL)) / 100));
             } catch (error) {
                 $("#TOTAL_DESCUENTO").val('NO');
                 console.error('Falla en pintar el TOTAL_DESCUENTO: ',error);
