@@ -51,7 +51,15 @@ $(document).ready(function () {
 });
 
 window.onload = function () {
-    select_cuenta_siguiente(id_usuario);
+    let id_socio = $("#id_socio_sec").val();
+    console.log("length id_socio: ",id_socio.length);
+    if (id_socio.length > 0){
+        console.log("Ejecutando funcion de datos predictivo");
+        select_datos_cuenta_predictivo(id_socio);
+    } else {
+        select_cuenta_siguiente(id_usuario);
+    }
+    
     options_estatus_llamadas = `<option value="0" selected>Selecciona Codigo</option>
         <option value="1">SIN CLASIFICAR</option>
         <option value="2">SIN DATOS</option>
@@ -331,7 +339,7 @@ function limpiar_datos() {
     $("#info_gestor input").val("");
     $("#info_gestor_secundario input").val("");
     $("#ID_CUENTA").val("");
-    $("#numero_marcado_deudor").val("");
+//    $("#numero_marcado_deudor").val("");
     console.log("limpieza de datos");
 }
 
@@ -428,6 +436,59 @@ function select_datos_cuenta(_cuenta) {
             $('select').formSelect();
 
             $("#numero_marcado_deudor, #gestion").val("");
+            $("#tiempo_actual").val("00:00:00");
+            $("#retraso_actual").val("00:00:00");
+
+            select_gestiones_cuenta(d_c.id_socio_sec, "0000-00-00", "tbody_tabla_gestiones");
+        },
+        error: function (error) {
+            console.log('Error en select_datos_cuenta: ', error);
+        }
+    });
+}
+// =============================================================================
+
+function select_datos_cuenta_predictivo(_id_socio) {
+    var params = {
+        action: "datos_cuenta_predictivo_came",
+        id_socio: _id_socio
+    };
+    console.log(params);
+    $.ajax({
+        type: "POST",
+        url: "ControllerDataCuentaCame",
+        data: params,
+        dataType: "json",
+        success: function (d_c) {
+
+            console.log(d_c);
+            limpiar_datos();
+            
+            if (d_c.IDENTIFICADOR === '0') {
+                alert('Esta cuenta ya esta inactiva y asignada a otro despacho');
+            }
+            for (var dato in d_c) {
+                $("#" + dato).empty();
+                $("#" + dato).val(d_c[dato]);
+            }
+            
+            $("#cuentas_dobles").val(`N# ${d_c.CUENTAS_DOBLES} - $${d_c.SALDO_C_DOBLES}`);
+            
+            $("#direc_came").val(`${d_c.calle} ${d_c.no_exterior}  ${d_c.colonia}, ${d_c.cp}, ${d_c.delegacion} ${d_c.estado}`);
+            $("#tb_numeros").empty();
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono_2}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_1}</td><td><a class="num_phone">${d_c.TEL_REF_1}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_2}</td><td><a class="num_phone">${d_c.TEL_REF_2}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_3}</td><td><a class="num_phone">${d_c.TEL_REF_3}<a></td></tr>`);
+
+            $("#estatus").empty();
+            $("#estatus").append('<option value="0"  selected>Selecciona Estatus</option>' + d_c["ESTATUS_POSIBLES_TXT"]);
+            $("#codigo_llamada").empty();
+            $("#codigo_llamada").append(options_estatus_llamadas);
+            $('select').formSelect();
+
+//            $("#numero_marcado_deudor, #gestion").val("");
             $("#tiempo_actual").val("00:00:00");
             $("#retraso_actual").val("00:00:00");
 

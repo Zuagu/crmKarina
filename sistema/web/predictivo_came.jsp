@@ -1,8 +1,9 @@
 <%-- 
-    Document   : gestor_teleono
-    Created on : 2/11/2020, 09:06:46 AM
-    Author     : zuagu, lowenz
+    Document   : predictivo_came
+    Created on : 15/11/2021, 09:05:53 PM
+    Author     : zuagu
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Predictivo StanHome</title>
+        <title>Predictivo Came</title>
         <link rel="shortcut icon" href="image/logoInco.fw.png">
         <link rel="stylesheet" type="text/css" href="css/css/icons-material.css">
         <link rel="stylesheet" type="text/css" href="css/css/materialize.min.css">
@@ -20,6 +21,9 @@
             input[type="text"]:not(.browser-default).validate + label {
                 color: #000;
                 font-weight: bold;
+            }
+            .importante {
+                background-color: #69f0ae !important;
             }
         </style>
     </head>
@@ -30,7 +34,7 @@
             <div class="container-fluid">
                 <div class="col s12 m12 l12 contenido-datos">
 
-                    <input id="ID_CUENTA" type="hidden">
+                    <input id="ID_CUENTA" type="hidden" value="${cuenta}">
                     <input id="numero_marcado_deudor" type="hidden" value="${telefono}">
 
                     <div class=" col s7 m7 l7">
@@ -40,61 +44,47 @@
                                 <h6>Informacion del cliente</h6>
                             </div>
                             <div class="input-field col s12 m12 l12">
-                                <input id="NOMBRE" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="NOMBRE">NOMBRE</label>
+                                <input id="nombre_socio" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="nombre_socio">NOMBRE SOCIO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="DEALER" type="text" class="validate" placeholder="" readonly="readonly" value="${cuenta}">
-                                <label for="DEALER">DEALER</label>
+                                <input id="id_socio_sec" type="text" class="validate" placeholder="" readonly="readonly" value="${cuenta}">
+                                <label for="id_socio_sec">ID SOCIO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="LV" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="LV">LV</label>
+                                <input id="nombre_ggi" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="nombre_ggi">NOMBRE GGI</label>
+                            </div>
+                            
+                            <div class="input-field col s6 m6 l6">
+                                <input id="rfc" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="rfc">RFC</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="DESCRIPCION" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="DESCRIPCION">DESCRIPCION</label>
+                                <input id="nombre_zona" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="nombre_zona">NOMBRE ZONA</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="ASIGNACION2" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="ASIGNACION2">ASIGNACION2</label>
+                                <input id="nombre_sucursal" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="nombre_sucursal">NOMBRE SUCURSAL</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="ASIGNACION" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="ASIGNACION">ASIGNACION</label>
+                                <input id="no_ciclo_grupo_no_vez" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="no_ciclo_grupo_no_vez">NO CICLO GRUPO/NO VEZ</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="ASIGNACION_MOROSO" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="ASIGNACION_MOROSO">ASIGNACION MOROSO</label>
+                                <input id="fecha_credito" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="fecha_credito">FECHA CREDITO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="FECHAASIGNACION" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="FECHAASIGNACION">FECHA ASIGNACION</label>
+                                <input id="plazo" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="plazo">PLAZO</label>
                             </div>
-                            <div class="input-field col s6 m6 l6">
-                                <input id="FECHAASIGNACIONPSC" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="FECHAASIGNACIONPSC">FECHA ASIGNACIONPSC</label>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <input id="NUMCAMPANAS" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="NUMCAMPANAS">NUMCAMPANAS</label>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <input id="DEA_EMAIL" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="DEA_EMAIL">DEA_EMAIL</label>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <input id="ANO" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="ANO">ANO</label>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <input id="CAMPANA" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="CAMPANA">CAMPANA</label>
-                            </div>
+                            
 
                             <div class="input-field col s12 m12 l12">
-                                <input id="DIRECCION_stanhome" type="text" class="validate" placeholder="" readonly="readonly" value="">
-                                <label for="DIRECCION_stanhome">Dirección</label>
+                                <input id="direc_came" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="direc_came">DIRECCION</label>
                             </div>
                         </div>
                     </div>
@@ -104,49 +94,57 @@
                                 <h6>Informacion Economica</h6>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="SALDOINICIALASIGNADO" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="SALDOINICIALASIGNADO">SALDO INICIAL ASIGNADO</label>
+                                <input id="cartera_vigente" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <label for="cartera_vigente">CARTERA VIGENTE</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="CARGOS" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="CARGOS">CARGOS</label>
+                                <input id="cartera_vencida_estadistica" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <label for="cartera_vencida_estadistica">CART VEN ESTADISTICA</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="ABONOS" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="ABONOS">ABONOS</label>
+                                <input id="ahorro_consumido" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <label for="ahorro_consumido">AHORRO CONSUMIDA</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="SALDOACTUAL" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="SALDOACTUAL">SALDOACTUAL</label>
+                                <input id="cartera_vencida_total" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <label for="cartera_vencida_total">CARTERA VENCIDA TOTAL</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="INTMORATORIOS" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="INTMORATORIOS">INT MORATORIOS</label>
+                                <input id="monto_credito_x_socio" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
+                                <label for="monto_credito_x_socio">CREDITO X SOCIO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="GTOSCBZA" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="GTOSCBZA">GTOSCBZA</label>
+                                <input id="monto_credito_came" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
+                                <label for="monto_credito_came">CREDITO CAME</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="GTOSXRECUPCBZA" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="GTOSXRECUPCBZA">GTOSXRECUPCBZA</label>
+                                <input id="importe_pagare_grupal" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">
+                                <label for="importe_pagare_grupal">PAGARE GRUPAL</label>
+                            </div>
+                            
+                            <div class="input-field col s6 m6 l6">
+                                <input id="saldo_individualizado" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="saldo_individualizado">INDIVIDUALIZADO</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="ACOBRAR" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="ACOBRAR">ACOBRAR</label>
+                                <input id="referencia_BANAMEX" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="referencia_BANAMEX">REFERENCIA BANAMEX</label>
+                            </div>
+                            <div class="input-field col s6 m6 l6">
+                                <input id="referencias_BBVA" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="referencias_BBVA">REFERENCIA BBVA</label>
+                            </div>
+                            
+                            <div class="input-field col s6 m6 l6">
+                                <input id="dias_atraso" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="dias_atraso">DIAS ATRASO</label>
+                            </div>
+                            <div class="input-field col s6 m6 l6">
+                                <input id="cuentas_dobles" type="text" class="validate" placeholder="" readonly="readonly" value="">
+                                <label for="cuentas_dobles">CUENTAS DOBLES</label>
                             </div>
                         </div>
                         
-                        
-                         <!--componente de datos aval -->
-                        <div class="col s12 m12 l12 white div_data_aval marcacion_directa z-depth-1">
-                            <ul id="datos_marcacion_aval" class="collection center datos_marcacion_directa">
-                                <label>Referencia</label>
-                                <li class="collection-item black-text">
-                                    Nombre Contacto Principal
-                                </li>
-                            </ul>
-                        </div>
                     </div>
 
 
@@ -158,7 +156,7 @@
                             </div>
 
                             <div class=" col s7 m7 l7  div_gestor_gestion z-depth-1">
-                                <textarea id="gestion" class="materialize-textarea limpiar_texto" data-length="2000" placeholder="Gestion">${telefono}</textarea>
+                                <textarea id="gestion" class="materialize-textarea limpiar_texto" data-length="1000" placeholder="Gestion">${telefono} </textarea>
                             </div>
 
                             <div class=" col s5 m5 l5 div_gestor_gestion">
@@ -170,9 +168,12 @@
                                 <div class=" input-field col s12 m12 l12">
                                     <select id="codigo_llamada"></select>
                                 </div>
-                                <div class=" input-field  col s12 m12 l12">
+                                <div class=" input-field  col s12 m12 l12 right-align">
                                     <a id="guardar_gestion" class="waves-effect waves-light btn green btn_guardar_gestiones"><i class="material-icons right">save</i>Guardar</a>
                                 </div> 
+<!--                                <div class=" input-field col s6 m6 l6">
+                                    <a id="cuenta_siguiente" class="waves-effect waves-light btn red btn_siguiente"><i class="material-icons right">send</i>Sig.</a>
+                                </div>-->
                             </div>
                         </div>
 
@@ -197,12 +198,18 @@
                         <!--componente de datos de contactacion directa -->
 
                         <div class="col s12 l12 m12 marcacion_directa white z-depth-1">
-                            <ul id="datos_marcacion_directa" class="collection datos_marcacion_directa">
-                                <label>Referencia 1</label>
-                                <li class="collection-item black-text">Nombre 1<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                <label>Referencia 2</label>
-                                <li class="collection-item black-text">Nombre 2<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                            </ul>
+                            
+                            <table id="datos_marcacion_directa">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Numero</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tb_numeros">
+                                    
+                                </tbody>
+                            </table>
 
                             <!--componente de editar_marcacion_directa-->
                             <div id="editar_marcacion_directa" class="col s12 m12 l12 hide">
@@ -211,8 +218,16 @@
                                 </div>
 
                                 <div class="input-field col s6 m6 l6">
+                                    <input id="telefono" type="text" class="validate" placeholder=""  value="">
+                                    <label for="telefono">TELEFONO</label>
+                                </div>
+                                <div class="input-field col s6 m6 l6">
+                                    <input id="telefono_2" type="text" class="validate" placeholder=""  value="">
+                                    <label for="telefono_2">TELEFONO 2</label>
+                                </div>
+                                <div class="input-field col s6 m6 l6">
                                     <input id="REFERENCIA_1" type="text" class="validate" placeholder=""  value="">
-                                    <label for="REFERENCIA_1">REFERENCIA 1</label>
+                                    <label for="REFERENCIA_1">REFERENCIA 2</label>
                                 </div>
                                 <div class="input-field col s6 m6 l6">
                                     <input id="TEL_REF_1" type="text" class="validate" placeholder=""  value="">
@@ -256,7 +271,6 @@
                                 <thead class="blue">
                                     <tr class="text-white">
                                         <td> <b>FECHA</b></td>
-                                        <td> <b>HORA</b></td>
                                         <td> <b>NUMERO</b></td>
                                         <td> <b>AGENTE</b></td>
                                         <td> <b>ESTATUS</b></td>
@@ -416,51 +430,6 @@
                             <option value="8">8 SEMANAS</option>
                             <option value="9">9 SEMANAS</option>
                             <option value="10">10 SEMANAS</option>
-                            <option value="11">11 SEMANAS</option>
-                            <option value="12">12 SEMANAS</option>
-                            <option value="13">13 SEMANAS</option>
-                            <option value="14">14 SEMANAS</option>
-                            <option value="15">15 SEMANAS</option>
-                            <option value="16">16 SEMANAS</option>
-                            <option value="17">17 SEMANAS</option>
-                            <option value="18">18 SEMANAS</option>
-                            <option value="19">19 SEMANAS</option>
-                            <option value="20">20 SEMANAS</option>
-                            <option value="21">21 SEMANAS</option>
-                            <option value="22">22 SEMANAS</option>
-                            <option value="23">23 SEMANAS</option>
-                            <option value="24">24 SEMANAS</option>
-                            <option value="25">25 SEMANAS</option>
-                            <option value="26">26 SEMANAS</option>
-                            <option value="27">27 SEMANAS</option>
-                            <option value="28">28 SEMANAS</option>
-                            <option value="29">29 SEMANAS</option>
-                            <option value="30">30 SEMANAS</option>
-                            <option value="31">31 SEMANAS</option>
-                            <option value="32">32 SEMANAS</option>
-                            <option value="33">33 SEMANAS</option>
-                            <option value="34">34 SEMANAS</option>
-                            <option value="35">35 SEMANAS</option>
-                            <option value="36">36 SEMANAS</option>
-                            <option value="37">37 SEMANAS</option>
-                            <option value="38">38 SEMANAS</option>
-                            <option value="39">39 SEMANAS</option>
-                            <option value="40">40 SEMANAS</option>
-                            <option value="41">41 SEMANAS</option>
-                            <option value="42">42 SEMANAS</option>
-                            <option value="43">43 SEMANAS</option>
-                            <option value="44">44 SEMANAS</option>
-                            <option value="45">45 SEMANAS</option>
-                            <option value="46">46 SEMANAS</option>
-                            <option value="47">47 SEMANAS</option>
-                            <option value="48">48 SEMANAS</option>
-                            <option value="49">49 SEMANAS</option>
-                            <option value="50">50 SEMANAS</option>
-                            <option value="51">51 SEMANAS</option>
-                            <option value="52">52 SEMANAS</option>
-                            <option value="53">53 SEMANAS</option>
-                            <option value="54">54 SEMANAS</option>
-                            <option value="55">55 SEMANAS</option>
                         </select>
                     </div>
                     <div class="col s12 center">
@@ -523,19 +492,19 @@
 
             <div id="modal_busqueda" class="modal">
                 <div class="modal-content">
-                    <h3 class="center">Resutado</h3>
+                    <h4 class="center">Resutado Busqueda</h4>
                     <div class="input-field col s6 offset-s3">
                         <input id="buqueda_relacionada" type="text" class="validate">
-                        <label for="buqueda_relacionada">Busqueda </label>
+                        <label for="buqueda_relacionada">Busqueda</label>
                     </div>
                     <div class="col s12 tabla_resultado_busqueda">
                         <table>
                             <thead>
                                 <tr>
                                     <th>CUENTA</th>
-                                    <th>CLIENTE</th>
-                                    <th>REFERENCIA</th>
-                                    <th>CATEGORIA</th>
+                                    <th>ID SOCIO</th>
+                                    <th>NOMBRE SOCIO</th>
+                                    <th>NOMBRE SUCURSAL</th>
                                 </tr>
                             </thead>
                             <tbody id="tb_cont_busqueda">
@@ -546,68 +515,6 @@
                     </div>
                 </div>
             </div>
-
-            <div id="modal_vencido_b" class="modal">
-                <div class="modal-content">
-                    <h3 class="center">Vencido </h3>
-
-                    <div class="col s12 tabla_resultado_busqueda">
-                        <div class="input-field col s2">
-                            <input id="B30" type="text" placeholder=" ">
-                            <label for="B30">B30</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B60" type="text" placeholder=" ">
-                            <label for="B60">B60</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B90" type="text" placeholder=" ">
-                            <label for="B90">B90</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B120" type="text" placeholder=" ">
-                            <label for="B120">B120</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B150" type="text" placeholder=" ">
-                            <label for="B150">B150</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B180" type="text" placeholder=" ">
-                            <label for="B180">B180</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B210" type="text" placeholder=" ">
-                            <label for="B210">B210</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B240" type="text" placeholder=" ">
-                            <label for="B240">B240</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B270" type="text" placeholder=" ">
-                            <label for="B270">B270</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B300" type="text" placeholder=" ">
-                            <label for="B300">B300</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B330" type="text" placeholder=" ">
-                            <label for="B330">B330</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B360" type="text" placeholder=" ">
-                            <label for="B360">B360</label>
-                        </div>
-                        <div class="input-field col s2">
-                            <input id="B390" type="text" placeholder=" ">
-                            <label for="B390">B390</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
             <div class="fixed-action-btn">
                 <a class="btn-floating btn-large red">
@@ -708,6 +615,6 @@
 
         <script type="text/javascript" src="js/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/js/predictivo_stanhome.js"></script>
+        <script type="text/javascript" src="js/js/gestor_came.js"></script>
     </body>
 </html>
