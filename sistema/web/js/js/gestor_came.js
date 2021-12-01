@@ -369,11 +369,11 @@ function select_cuenta_siguiente(_id_usuario) {
 
             $("#direc_came").val(`${d_c.calle} ${d_c.no_exterior}  ${d_c.colonia}, ${d_c.cp}, ${d_c.delegacion} ${d_c.estado}`);
             $("#tb_numeros").empty();
-            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono_2}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_1}</td><td><a class="num_phone">${d_c.TEL_REF_1}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_2}</td><td><a class="num_phone">${d_c.TEL_REF_2}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_3}</td><td><a class="num_phone">${d_c.TEL_REF_3}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone" href="zoiper://${d_c.telefono}">${d_c.telefono}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone" href="zoiper://${d_c.telefono_2}">${d_c.telefono_2}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_1}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_1}">${d_c.TEL_REF_1}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_2}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_2}">${d_c.TEL_REF_2}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_3}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_3}">${d_c.TEL_REF_3}</a></td></tr>`);
 
             $("#estatus").empty();
             $("#estatus").append('<option value="0"  selected>Selecciona Estatus</option>' + d_c["ESTATUS_POSIBLES_TXT"]);
@@ -423,14 +423,14 @@ function select_datos_cuenta(_cuenta) {
             
             $("#direc_came").val(`${d_c.calle} ${d_c.no_exterior}  ${d_c.colonia}, ${d_c.cp}, ${d_c.delegacion} ${d_c.estado}`);
             $("#tb_numeros").empty();
-            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone">${d_c.telefono_2}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_1}</td><td><a class="num_phone">${d_c.TEL_REF_1}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_2}</td><td><a class="num_phone">${d_c.TEL_REF_2}<a></td></tr>`);
-            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_3}</td><td><a class="num_phone">${d_c.TEL_REF_3}<a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone" href="zoiper://${d_c.telefono}">${d_c.telefono}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.nombre_socio}</td><td><a class="num_phone" href="zoiper://${d_c.telefono_2}">${d_c.telefono_2}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_1}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_1}">${d_c.TEL_REF_1}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_2}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_2}">${d_c.TEL_REF_2}</a></td></tr>`);
+            $("#tb_numeros").append(`<tr><td>${d_c.REFERENCIA_3}</td><td><a class="num_phone" href="zoiper://${d_c.TEL_REF_3}">${d_c.TEL_REF_3}</a></td></tr>`);
 
             $("#estatus").empty();
-            $("#estatus").append('<option value="0"  selected>Selecciona Estatus</option>' + d_c["ESTATUS_POSIBLES_TXT"]);
+            $("#estatus").append('<option value="0" selected>Selecciona Estatus</option>' + d_c["ESTATUS_POSIBLES_TXT"]);
             $("#codigo_llamada").empty();
             $("#codigo_llamada").append(options_estatus_llamadas);
             $('select').formSelect();

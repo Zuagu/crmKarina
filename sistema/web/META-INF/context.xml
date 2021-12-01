@@ -3,18 +3,21 @@
     <Resource auth="Container"
               driverClassName="com.mysql.jdbc.Driver"
               jdbcCompiliantTruncation="false"
-              logAbandoned="true" name="jdbc/arcade_call"
+              logAbandoned="true" 
+              name="jdbc/arcade_call"
               maxTotal="60"
               maxIdle="20"
-              maxWaitMillis="90000"
+              maxWaitMillis="20000"
               password="server2020"
               removeAbandoned="true"
               removeAbandonedOnBorrow="true"
               removeAbandonedOnMaintenance="true"
-              removeAbandonedTimeout="60"
+              removeAbandonedTimeout="30"
               type="javax.sql.DataSource"
               url="jdbc:mysql://localhost:3306/arcade_call?autoReconnect=true"
-              username="admin"/>
+              username="admin"
+              validationQuery="SELECT 1 FROM dual"
+    />
 </Context>
 
 <!--<Context antiJARLocking="true" path="/sistema">
