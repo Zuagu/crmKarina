@@ -27,6 +27,7 @@
                 background-size: contain;
             }
 
+
         </style>
     </head>
 
@@ -302,20 +303,7 @@
                                     </div>
                                 </div>
                             </div>     
-                            <!--                            <ul id="datos_marcacion_directa" class="collection datos_marcacion_directa hide">
-                                                            <label>Referencia 1</label>
-                                                            <li class="collection-item black-text">Nombre 1<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                                            <label>Referencia 2</label>
-                                                            <li class="collection-item black-text">Nombre 2<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                                            <label>Referencia 3</label>
-                                                            <li class="collection-item black-text">Nombre 3<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                                            <label>Referencia 4</label>
-                                                            <li class="collection-item black-text">Nombre 4<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                                            <label>Referencia 5</label>
-                                                            <li class="collection-item black-text">Nombre 5<a class="right" href="zoiper://"></a> <a class="right" href="zoiper://"></a></li>
-                                                        </ul>-->
 
-                            <!--componente de editar_marcacion_directa-->
 
                             <div class="col s12 m12 l12 div_btn_act_datos right-align">
                                 <a id="edit_num" class="btn-small blue btn_secundario">editar</a>
@@ -362,10 +350,10 @@
                         </div>
                         <div id="div_agendas" class="col s12 z-depth-1 div_gestor_contenido white">
                             <input id="id_reg_agenda" type="hidden">
-                            <div class="col s12 m9 l9">
+                            <div class="col s12 m9 l9 div_agendas inner">
                                 <table>
                                     <thead class="grey lighten-1">
-                                        <tr class="">
+                                        <tr class="white-text">
                                             <th>ID</th>
                                             <th>CLIENTE_UNICO</th>
                                             <th>DESCRIPCION</th>
@@ -377,16 +365,15 @@
 
                                     </tbody>
                                 </table>
-
                             </div>
-                            <div class="col s12 m3 l3 div_btn">
-                                <a id="new_agenda" class="btn green waves-effect waves-light">Agregar</a>
+                            <div class="col s12 m3 l3 input-field">
+                                <a id="new_agenda" class="btn green lighten-1 col s12 waves-effect waves-light">Agregar</a>
                             </div>
-                            <div class="col s12 m3 l3 div_btn">
-                                <a id="delete_agenda" class="btn red waves-effect waves-light">Eliminar</a>
+                            <div class="col s12 m3 l3 input-field">
+                                <a id="delete_agenda" class="btn red lighten-1 col s12 waves-effect waves-light">Eliminar</a>
                             </div>
-                            <div class="col s12 m3 l3 div_btn">
-                                <a id="ver_modal_agendas" class="btn blue waves-effect">Ver Agendas</a>
+                            <div class="col s12 m3 l3 input-field">
+                                <a id="ver_modal_agendas" class="btn lighten-1 col s12 blue waves-effect">Ver Agendas</a>
                             </div>
 
                             <div id="tabla_agendas" class="col s12 m12 l12"></div>
@@ -617,7 +604,7 @@
 
             <div id="modal_agregar_agenda" class="modal">
                 <div class="modal-content">
-                    <h3 class="center">Nuevo Recordatorio</h3>
+                    <h4 class="center">Nuevo Recordatorio</h4>
                     <div class="col s12">
                         <div class="col s12 div_btn right-align"><p id="mensaje_error_agenda" class="red-text"></p></div>
                         <div class="input-field col s6">
@@ -636,7 +623,7 @@
                             <input id="hora_agenda" type="text" class="timepicker">
                             <label for="hora_agenda">Hora</label>
                         </div>
-                        <div class="col s12 div_btn right-align">
+                        <div class="col s12 right-align input-field">
                             <a class="btn red waves-effect modal-close">Cancelar</a>
                             <a id="insertar_agenda" class="btn green waves-effect">Aceptar</a>
                         </div>
@@ -660,9 +647,9 @@
                     <h3 class="center">Resutado</h3>
                     <div class="input-field col s6 offset-s3">
                         <input id="buqueda_relacionada" type="text" class="validate">
-                        <label for="buqueda_relacionada">Busqueda </label>
+                        <label for="buqueda_relacionada">Busqueda</label>
                     </div>
-                    <div class="col s12 tabla_resultado_busqueda">
+                    <div class="col s12 tabla_resultado_busqueda inner">
                         <table>
                             <thead>
                                 <tr>
@@ -673,7 +660,6 @@
                                 </tr>
                             </thead>
                             <tbody id="tb_cont_busqueda">
-
                             </tbody>
                         </table>
 
@@ -809,9 +795,26 @@
 
             <div id="modal_ver_agenda" class="modal">
                 <div class="modal-content">
-                    <h3 class="center">Alerta de Agenda</h3>
+                    <h4 class="center">Alerta de Agenda</h4>
 
                     <div class="col s12">
+                        <div class="col s12 m12 l12 div_agendas inner">
+                            <table>
+                                <thead class="grey lighten-1">
+                                    <tr class="white-text">
+                                        <th>ID</th>
+                                        <th>CLIENTE_UNICO</th>
+                                        <th>DESCRIPCION</th>
+                                        <th>FECHA</th>
+                                        <th>HORA</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tb_list_agenda_modal">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row"></div>
                         <input id="id_agenda_gestor" value="0" type="hidden">
                         <div class="input-field col s6">
                             <input id="agenta_cliente_unico" type="text" placeholder=" " class="validate">
@@ -829,9 +832,9 @@
                             <input id="agenta_hora" type="text" placeholder=" " class="validate">
                             <label for="agenta_hora">Hora </label>
                         </div>
-                        <div class="col s12 div_btn center-align">
+                        <div class="col s12 input-field right-align">
                             <a class="btn red waves-effect modal-close">Posponer</a>
-                            <a id="cuenta_agenda_datos" class="btn blue waves-effect modal-close">Buscar datos Ceunta</a>
+                            <a id="cuenta_agenda_datos" class="btn blue waves-effect modal-close">Buscar datos Cuenta</a>
                         </div>
                     </div>
 

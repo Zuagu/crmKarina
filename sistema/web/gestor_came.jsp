@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Gestor Stanhome</title>
+        <title>Gestor Came</title>
         <link rel="shortcut icon" href="image/logoInco.fw.png">
         <link rel="stylesheet" type="text/css" href="css/css/icons-material.css">
         <link rel="stylesheet" type="text/css" href="css/css/materialize.min.css">
@@ -23,6 +23,10 @@
             }
             .importante {
                 background-color: #69f0ae !important;
+            }
+            #div_gestor_gestion {
+                margin-top: 7px;
+                height: 196px;
             }
         </style>
     </head>
@@ -97,8 +101,8 @@
                                 <label for="cartera_vigente">CARTERA VIGENTE</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
-                                <input id="cartera_vencida_estadistica" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="cartera_vencida_estadistica">CART VEN ESTADISTICA</label>
+                                <input id="monto_minimo_a_pagar" type="text" class="validate" placeholder="" readonly="readonly"  value="">
+                                <label for="monto_minimo_a_pagar">LIQUIDACION GRUPAL</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
                                 <input id="ahorro_consumido" type="text" class="validate" placeholder="" readonly="readonly"  value="">
@@ -106,7 +110,7 @@
                             </div>
                             <div class="input-field col s6 m6 l6">
                                 <input id="cartera_vencida_total" type="text" class="validate" placeholder="" readonly="readonly"  value="">
-                                <label for="cartera_vencida_total">CARTERA VENCIDA TOTAL</label>
+                                <label for="cartera_vencida_total">MORA TOTAL</label>
                             </div>
                             <div class="input-field col s6 m6 l6">
                                 <input id="monto_credito_x_socio" type="text" class="validate importante" placeholder="" readonly="readonly"  value="">

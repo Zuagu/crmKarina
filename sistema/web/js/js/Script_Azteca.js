@@ -1425,13 +1425,21 @@ function select_agendas() {
         success: function (result) {
 //            console.log(result);
             $('#tb_list_agenda').empty();
+            $('#tb_list_agenda_modal').empty();
             for (let item of result) {
-                $('#tb_list_agenda').append(`<tr id='row_agenda_${item.ID_REGISTRO}' class='row_reg_agenda ${item.F_ACTIVE}'>
-                <td>${item.ID_REGISTRO}</td>
-                <td>${item.CLIENTE_UNICO}</td>
-                <td>${item.DESCRIPCION}</td>
-                <td>${item.FECHA}</td>
-                <td>${item.HORA}</td>
+                $('#tb_list_agenda').append(`<tr id='row_agenda_${item.ID_REGISTRO}' class='row_reg_agenda ${item.F_ACTIVE} lighten-2'>
+                    <td>${item.ID_REGISTRO}</td>
+                    <td>${item.CLIENTE_UNICO}</td>
+                    <td>${item.DESCRIPCION}</td>
+                    <td>${item.FECHA}</td>
+                    <td>${item.HORA}</td>
+                </tr>`);
+                $('#tb_list_agenda_modal').append(`<tr class='row_reg_agenda ${item.F_ACTIVE} lighten-2'>
+                    <td>${item.ID_REGISTRO}</td>
+                    <td>${item.CLIENTE_UNICO}</td>
+                    <td>${item.DESCRIPCION}</td>
+                    <td>${item.FECHA}</td>
+                    <td>${item.HORA}</td>
                 </tr>`);
                 if (parseInt(item.H_EJECUTAR) > 0) {
                     console.log(parseInt(item.H_EJECUTAR));
